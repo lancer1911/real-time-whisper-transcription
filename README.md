@@ -150,7 +150,17 @@ Recommended energy threshold: 300
 
 Use the recommended settings:
 ```bash
-python transcriber.py --energy_threshold 300 --microphone_index 0 --save_audio
+python transcriber.py \                                       
+  --language en \
+  --model small \
+  --save_audio \
+  --output_file transcription.txt \
+  --device cpu \
+  --microphone_index 4 \
+  --energy_threshold 100 \
+  --segment_duration 8.0 \
+  --overlap_duration 1.0 \
+  --debug
 ```
 
 ## Configuration
