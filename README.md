@@ -181,65 +181,12 @@ python transcriber.py \
 - `--save_audio`: Save audio segments (recommended for debugging and analysis)
 - `--debug`: Enable debug mode
 
-## Usage Examples
-
-```bash
-# List available microphones
-python transcriber.py --list_mics
-
-# Chinese transcription with audio saving
-python transcriber.py --language zh --save_audio
-
-# Custom energy threshold for sensitive microphone
-python transcriber.py --energy_threshold 100 --save_audio
-
-# Debug mode with custom settings
-python transcriber.py --debug --segment_duration 10.0 --save_audio
-```
-
 ## Interactive Controls
 
 During transcription:
 - **Ctrl+C**: Pause and access options menu
   - Option 1: Resume recording
   - Option 2: Stop and exit
-
-## Troubleshooting
-
-### Audio Issues
-1. **Run diagnostics first**: `python audio_diagnostic.py`
-2. **Low audio detection**: Use lower energy threshold (50-100)
-3. **No audio detected**: Check microphone permissions
-4. **Try different recording method**: `--recording_method pyaudio`
-5. **Enable audio saving**: Use `--save_audio` to analyze recorded segments
-
-### Model Issues
-- **Memory errors**: Use smaller model (`--model tiny`)
-- **Slow performance**: Use base or small model
-
-### Permission Issues
-- **macOS**: Grant microphone permission in System Preferences
-- **Linux**: Add user to audio group: `sudo usermod -a -G audio $USER`
-
-## Known Issues / Experimental Features
-
-The following features are implemented but not fully tested:
-
-### GPU Acceleration
-- `--device cuda` (NVIDIA GPUs with CUDA 11.6+)
-- `--device mps` (Apple Silicon)
-- PyTorch with CUDA 11.6 is included in requirements.txt
-- May require additional CUDA runtime setup
-
-### Faster-Whisper
-- `--use_faster_whisper` flag available
-- Requires: `pip install faster-whisper`
-- Performance improvements not verified
-
-### LLM Post-processing (Ollama)
-- `--enable_llm` flag available
-- Requires Ollama installation and setup
-- Text correction functionality not tested
 
 ## Requirements
 
