@@ -93,11 +93,31 @@ python transcriber.py
 
 ### Command Line Mode
 ```bash
-# Basic usage
-python transcriber.py --language en --model small --save_audio
+# English transcription
+python transcriber.py \                                       
+  --language en \
+  --model small \
+  --save_audio \
+  --output_file transcription.txt \
+  --device cpu \
+  --microphone_index 4 \
+  --energy_threshold 100 \
+  --segment_duration 8.0 \
+  --overlap_duration 1.0 \
+  --debug
 
 # Chinese transcription
-python transcriber.py --language zh --model small --save_audio
+python transcriber.py \                                       
+  --language zh \
+  --model small \
+  --save_audio \
+  --output_file transcription.txt \
+  --device cpu \
+  --microphone_index 4 \
+  --energy_threshold 100 \
+  --segment_duration 8.0 \
+  --overlap_duration 1.0 \
+  --debug
 ```
 
 ## Audio Diagnostics
